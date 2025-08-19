@@ -4,6 +4,8 @@ export { LoginPage } from './lib/LoginPage'
 export type { LoginPageProps } from './lib/LoginPage'
 export { MinimalLoginPage } from './lib/MinimalLoginPage'
 export type { MinimalLoginPageProps } from './lib/MinimalLoginPage'
+export { GlassLoginPage } from './lib/GlassLoginPage'
+export type { GlassLoginPageProps } from './lib/GlassLoginPage'
 export * from './lib/valid'
 import './styles.css'
 
