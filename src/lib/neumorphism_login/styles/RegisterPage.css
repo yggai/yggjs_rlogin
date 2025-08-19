@@ -1,0 +1,316 @@
+/* 新拟态注册页面样式 - 继承登录页面样式并扩展 */
+
+/* 注册页面特有样式 */
+.yggjs-neumorphism-register-page {
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  /* 低饱和米白背景 */
+  background: linear-gradient(135deg, 
+    #f5f5f0 0%, 
+    #f0f0eb 25%, 
+    #ebebeb 50%, 
+    #f0f0f5 75%, 
+    #f5f5f0 100%);
+}
+
+/* 注册容器 - 稍微大一些以容纳更多字段 */
+.yggjs-neumorphism-register-container {
+  width: 100%;
+  max-width: 460px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+/* 注册卡片 */
+.yggjs-neumorphism-register-card {
+  background: #f0f0f0;
+  border-radius: 32px;
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    20px 20px 40px rgba(0, 0, 0, 0.1),
+    -20px -20px 40px rgba(255, 255, 255, 0.8);
+}
+
+.yggjs-neumorphism-register-card:hover {
+  box-shadow: 
+    25px 25px 50px rgba(0, 0, 0, 0.12),
+    -25px -25px 50px rgba(255, 255, 255, 0.9);
+}
+
+/* Header区域 */
+.yggjs-neumorphism-register-header {
+  text-align: center;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Logo 区域 */
+.yggjs-neumorphism-register-logo {
+  text-align: center;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.yggjs-neumorphism-register-logo-text {
+  font-size: 28px;
+  font-weight: 700;
+  color: #666666;
+  margin: 0;
+  text-shadow: 
+    2px 2px 4px rgba(255, 255, 255, 0.8),
+    -1px -1px 2px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.5px;
+}
+
+.yggjs-neumorphism-register-subtitle {
+  font-size: 16px;
+  color: #888888;
+  margin: 8px 0 0 0;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* 表单区域 */
+.yggjs-neumorphism-register-form {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.yggjs-neumorphism-register-field {
+  margin-bottom: 20px;
+}
+
+/* 注册输入框样式 - 复用登录页面样式 */
+.yggjs-neumorphism-register-input {
+  width: 100%;
+  height: 52px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 20px;
+  background: transparent;
+  outline: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #555555;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.yggjs-neumorphism-register-input::placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.yggjs-neumorphism-register-input:disabled {
+  color: #cccccc;
+  cursor: not-allowed;
+}
+
+.yggjs-neumorphism-register-input--password {
+  padding-right: 56px;
+}
+
+/* 注册按钮 */
+.yggjs-neumorphism-register-button {
+  width: 100%;
+  height: 52px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 20px;
+  color: #555555;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 16px;
+  position: relative;
+  overflow: hidden;
+  -webkit-appearance: none;
+  appearance: none;
+  /* 微凸按钮阴影 */
+  box-shadow: 
+    12px 12px 24px rgba(0, 0, 0, 0.1),
+    -12px -12px 24px rgba(255, 255, 255, 0.8);
+}
+
+.yggjs-neumorphism-register-button:hover {
+  color: #333333;
+  box-shadow: 
+    16px 16px 32px rgba(0, 0, 0, 0.12),
+    -16px -16px 32px rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.yggjs-neumorphism-register-button:active {
+  transform: translateY(0);
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.1),
+    -8px -8px 16px rgba(255, 255, 255, 0.8);
+}
+
+.yggjs-neumorphism-register-button:disabled {
+  color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 
+    6px 6px 12px rgba(0, 0, 0, 0.05),
+    -6px -6px 12px rgba(255, 255, 255, 0.8);
+}
+
+/* Footer区域 */
+.yggjs-neumorphism-register-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* 错误提示 */
+.yggjs-neumorphism-register-error {
+  color: #e53e3e;
+  font-size: 13px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* 协议链接样式 */
+.yggjs-neumorphism-agreement-link {
+  color: #667eea;
+  text-decoration: none;
+  margin-left: 4px;
+  transition: all 0.2s ease;
+}
+
+.yggjs-neumorphism-agreement-link:hover {
+  color: #5a67d8;
+  text-decoration: underline;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .yggjs-neumorphism-register-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+  
+  .yggjs-neumorphism-register-card {
+    padding: 32px 24px;
+    border-radius: 24px;
+  }
+  
+  .yggjs-neumorphism-register-logo-text {
+    font-size: 24px;
+  }
+  
+  .yggjs-neumorphism-register-input {
+    height: 48px;
+    font-size: 15px;
+    border-radius: 18px;
+  }
+  
+  .yggjs-neumorphism-register-button {
+    height: 48px;
+    font-size: 15px;
+    border-radius: 18px;
+  }
+  
+  .yggjs-neumorphism-register-field {
+    margin-bottom: 18px;
+  }
+  
+  .yggjs-neumorphism-register-header {
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .yggjs-neumorphism-register-card {
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+  
+  .yggjs-neumorphism-register-logo-text {
+    font-size: 22px;
+  }
+  
+  .yggjs-neumorphism-register-input {
+    height: 44px;
+    padding: 0 16px;
+    font-size: 14px;
+    border-radius: 16px;
+  }
+  
+  .yggjs-neumorphism-register-input--password {
+    padding-right: 52px;
+  }
+  
+  .yggjs-neumorphism-register-button {
+    height: 44px;
+    font-size: 14px;
+    border-radius: 16px;
+  }
+  
+  .yggjs-neumorphism-register-field {
+    margin-bottom: 16px;
+  }
+  
+  .yggjs-neumorphism-register-error {
+    font-size: 12px;
+  }
+  
+  .yggjs-neumorphism-checkbox-label {
+    font-size: 13px;
+  }
+}
+
+/* 验证码图片样式适配 */
+.yggjs-neumorphism-register-page .yggjs-captcha-image {
+  background: #f0f0f0;
+  border: none;
+  border-radius: 20px;
+  height: 52px;
+  width: 110px;
+  box-shadow: 
+    6px 6px 12px rgba(0, 0, 0, 0.1),
+    -6px -6px 12px rgba(255, 255, 255, 0.8);
+}
+
+.yggjs-neumorphism-register-page .yggjs-captcha-image:hover {
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.12),
+    -8px -8px 16px rgba(255, 255, 255, 0.9);
+}
+
+.yggjs-neumorphism-register-page .yggjs-captcha-image:focus {
+  outline: none;
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.12),
+    -8px -8px 16px rgba(255, 255, 255, 0.9),
+    0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+@media (max-width: 480px) {
+  .yggjs-neumorphism-register-page .yggjs-captcha-image {
+    height: 44px;
+    width: 90px;
+    border-radius: 16px;
+  }
+}

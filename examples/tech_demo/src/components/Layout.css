@@ -1,0 +1,345 @@
+/* 布局样式 - 科技感设计 */
+
+.layout {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 背景装饰 */
+.layout__bg-decoration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.layout__bg-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: float 20s ease-in-out infinite;
+}
+
+.layout__bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at 20% 50%,
+    rgba(0, 255, 255, 0.1) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    ellipse at 80% 20%,
+    rgba(102, 0, 255, 0.1) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    ellipse at 40% 80%,
+    rgba(0, 102, 255, 0.1) 0%,
+    transparent 50%
+  );
+}
+
+/* 导航栏 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all var(--transition-normal) ease;
+}
+
+.navbar--scrolled {
+  background: rgba(10, 10, 10, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 20px;
+  transition: all var(--transition-fast) ease;
+}
+
+.navbar__logo:hover {
+  color: var(--primary-cyan);
+  transform: scale(1.05);
+}
+
+.navbar__logo-icon {
+  color: var(--primary-cyan);
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.5));
+}
+
+.navbar__logo-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 桌面端导航 */
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 12px;
+  transition: all var(--transition-fast) ease;
+  overflow: hidden;
+}
+
+.navbar__link:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-1px);
+}
+
+.navbar__link--active {
+  color: var(--primary-cyan);
+  background: rgba(0, 255, 255, 0.1);
+}
+
+.navbar__link-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  border-radius: 1px;
+}
+
+/* GitHub链接 */
+.navbar__github {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--text-secondary);
+  border-radius: 10px;
+  transition: all var(--transition-fast) ease;
+  text-decoration: none;
+}
+
+.navbar__github:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  transform: scale(1.1);
+}
+
+/* 移动端菜单按钮 */
+.navbar__mobile-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all var(--transition-fast) ease;
+}
+
+.navbar__mobile-toggle:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* 移动端菜单 */
+.navbar__mobile-menu {
+  overflow: hidden;
+  background: rgba(10, 10, 10, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar__mobile-menu-content {
+  padding: 20px;
+}
+
+.navbar__mobile-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all var(--transition-fast) ease;
+}
+
+.navbar__mobile-link:hover,
+.navbar__mobile-link--active {
+  color: var(--primary-cyan);
+  transform: translateX(8px);
+}
+
+.navbar__mobile-link:last-child {
+  border-bottom: none;
+}
+
+/* 主内容区域 */
+.main-content {
+  margin-top: 70px;
+  min-height: calc(100vh - 70px);
+  position: relative;
+  z-index: 1;
+}
+
+/* 页脚 */
+.footer {
+  background: rgba(10, 10, 10, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 80px;
+}
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px 20px;
+}
+
+.footer__content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer__section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer__title {
+  font-size: 24px;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer__subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.footer__description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all var(--transition-fast) ease;
+}
+
+.footer__link:hover {
+  color: var(--primary-cyan);
+  transform: translateX(4px);
+}
+
+.footer__bottom {
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.footer__copyright {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .navbar__nav,
+  .navbar__github {
+    display: none;
+  }
+  
+  .navbar__mobile-toggle {
+    display: flex;
+  }
+  
+  .footer__content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .footer__container {
+    padding: 40px 20px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__container {
+    padding: 0 16px;
+  }
+  
+  .navbar__logo-text {
+    display: none;
+  }
+  
+  .footer__container {
+    padding: 30px 16px 20px;
+  }
+}

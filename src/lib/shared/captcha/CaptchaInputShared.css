@@ -1,0 +1,71 @@
+/* 验证码输入组件样式 */
+.yggjs-captcha-input {
+  width: 100%;
+}
+
+.yggjs-captcha-input-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+/* 验证码输入框继承父容器的输入框样式 */
+.yggjs-captcha-input-field {
+  flex: 1;
+  min-width: 0; /* 确保flex收缩正常工作 */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  /* 其他样式从父容器继承 */
+}
+
+.yggjs-captcha-input-field::placeholder {
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.yggjs-captcha-image {
+  width: 100px;
+  height: 48px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #f8f9fa;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.yggjs-captcha-image:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.yggjs-captcha-image:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.yggjs-captcha-image:disabled,
+.yggjs-captcha-image[style*="not-allowed"] {
+  opacity: 0.6;
+  cursor: not-allowed !important;
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+  .yggjs-captcha-input-container {
+    gap: 6px;
+  }
+  
+  .yggjs-captcha-input-field {
+    height: 44px;
+    font-size: 15px;
+  }
+  
+  .yggjs-captcha-image {
+    width: 80px;
+    height: 44px;
+  }
+}

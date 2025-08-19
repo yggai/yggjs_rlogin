@@ -1,16 +1,26 @@
-export { LoginForm } from './lib/LoginForm'
-export type { LoginFormProps } from './lib/LoginForm'
-export { LoginPage } from './lib/LoginPage'
-export type { LoginPageProps } from './lib/LoginPage'
-export { MinimalLoginPage } from './lib/MinimalLoginPage'
-export type { MinimalLoginPageProps } from './lib/MinimalLoginPage'
-export { GlassLoginPage } from './lib/GlassLoginPage'
-export type { GlassLoginPageProps } from './lib/GlassLoginPage'
-export { NeumorphismLoginPage } from './lib/NeumorphismLoginPage'
-export type { NeumorphismLoginPageProps } from './lib/NeumorphismLoginPage'
-export { CaptchaInput } from './lib/CaptchaInput'
-export type { CaptchaInputProps } from './lib/CaptchaInput'
-export * from './lib/valid'
-export * from './lib/captcha'
+// 共享基础设施
+export * from './lib/shared'
+
+// 基础风格登录注册
+export * from './lib/basic_login'
+
+// 极简风格登录注册
+export * from './lib/minimal_login'
+
+// 磨砂玻璃风格登录注册
+export * from './lib/glass_login'
+
+// 新拟态风格登录注册
+export * from './lib/neumorphism_login'
+
+// 向后兼容的导出（保留旧的API）
+// 注意：旧的组件已迁移到对应的风格目录中
+// 请使用新的导入方式：
+// import { BasicLoginPage } from 'yggjs_rlogin/basic_login'
+// import { MinimalLoginPage } from 'yggjs_rlogin/minimal_login'
+// import { GlassLoginPage } from 'yggjs_rlogin/glass_login'
+// import { NeumorphismLoginPage } from 'yggjs_rlogin/neumorphism_login'
+
+// 样式导入
 import './styles.css'
 
