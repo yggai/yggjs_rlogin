@@ -1,0 +1,30 @@
+/* 分屏品牌主题样式：左侧品牌视频，右侧极简表单，深空灰背景 */
+.yggjs-splitbrand-page { min-height:100vh; min-width:100vw; display:flex; align-items:stretch; background:#0e1116; color:#e5e7eb; }
+.yggjs-splitbrand-left { flex: 0 0 var(--split-pct, 50%); position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#0b0e13; }
+.yggjs-splitbrand-right { flex:1; display:flex; align-items:center; justify-content:center; padding:40px 24px; }
+
+.yggjs-splitbrand-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.yggjs-splitbrand-overlay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; text-align:center; padding:24px; z-index:1; }
+
+.yggjs-splitbrand-card { width:100%; max-width:420px; background:#11151b; border:1px solid #1f2937; border-radius:14px; padding:36px 28px; box-shadow: 0 10px 28px rgba(0,0,0,.35); }
+.yggjs-splitbrand-title { font-size:26px; font-weight:600; color:#e5e7eb; margin:0 0 16px; text-align:center; }
+
+.yggjs-splitbrand-field { margin-bottom:14px; }
+.yggjs-splitbrand-input{ width:100%; height:48px; padding:0 14px; border:1px solid #263141; border-radius:10px; background:#0f1319; color:#e5e7eb; outline:none; }
+.yggjs-splitbrand-input::placeholder{ color:#8a9bb0; }
+.yggjs-splitbrand-input:focus{ border-color:#334155; box-shadow: 0 0 0 3px rgba(59,130,246,.25); }
+
+.yggjs-splitbrand-button{ width:100%; height:48px; border:none; border-radius:10px; color:#fff; font-weight:600; cursor:pointer; background: var(--brand-color, #3b82f6); box-shadow: 0 10px 22px rgba(59,130,246,.28); }
+.yggjs-splitbrand-button:hover{ filter:brightness(1.05); transform:translateY(-1px); }
+.yggjs-splitbrand-button:disabled{ opacity:.6; cursor:not-allowed; transform:none; }
+
+.yggjs-splitbrand-error{ color:#fca5a5; font-size:14px; margin-top:8px; }
+
+/* 验证码图片 */
+.yggjs-splitbrand-page .yggjs-captcha-image{ background:#0f1319; border:1px solid #263141; border-radius:10px; height:48px; width:120px; }
+
+@media (max-width: 960px){
+  .yggjs-splitbrand-left{ display:none; }
+  .yggjs-splitbrand-right{ flex:1 0 100%; }
+}
+

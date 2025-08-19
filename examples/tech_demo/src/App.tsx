@@ -39,6 +39,11 @@ import IllustrationLoginNoCaptchaDemo from './pages/illustration/LoginNoCaptchaD
 import IllustrationLoginWithCaptchaDemo from './pages/illustration/LoginWithCaptchaDemo'
 import IllustrationRegisterNoCaptchaDemo from './pages/illustration/RegisterNoCaptchaDemo'
 import IllustrationRegisterWithCaptchaDemo from './pages/illustration/RegisterWithCaptchaDemo'
+// SplitBrand
+import SplitBrandLoginNoCaptchaDemo from './pages/splitbrand/LoginNoCaptchaDemo'
+import SplitBrandLoginWithCaptchaDemo from './pages/splitbrand/LoginWithCaptchaDemo'
+import SplitBrandRegisterNoCaptchaDemo from './pages/splitbrand/RegisterNoCaptchaDemo'
+import SplitBrandRegisterWithCaptchaDemo from './pages/splitbrand/RegisterWithCaptchaDemo'
 
 import ComparisonPage from './pages/ComparisonPage'
 import DocumentationPage from './pages/DocumentationPage'
@@ -240,6 +245,10 @@ function App() {
           <Route path="/illustration" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><IllustrationLoginNoCaptchaDemo /></motion.div>} />
           <Route path="/illustration/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><IllustrationLoginWithCaptchaDemo /></motion.div>} />
 
+          {/* 分屏品牌登录页面路由 */}
+          <Route path="/splitbrand" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><SplitBrandLoginNoCaptchaDemo /></motion.div>} />
+          <Route path="/splitbrand/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><SplitBrandLoginWithCaptchaDemo /></motion.div>} />
+
           {/* 注册页面路由 */}
           <Route
             path="/basic/register"
@@ -390,6 +399,10 @@ function App() {
           {/* 插画故事注册页面路由 */}
           <Route path="/illustration/register" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><IllustrationRegisterNoCaptchaDemo /></motion.div>} />
           <Route path="/illustration/register/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><IllustrationRegisterWithCaptchaDemo /></motion.div>} />
+
+          {/* 分屏品牌注册页面路由 */}
+          <Route path="/splitbrand/register" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><SplitBrandRegisterNoCaptchaDemo /></motion.div>} />
+          <Route path="/splitbrand/register/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><SplitBrandRegisterWithCaptchaDemo /></motion.div>} />
 
           {/* 渐变撞色登录页面路由 */}
           <Route path="/gradient" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><GradientClashLoginNoCaptchaDemo /></motion.div>} />

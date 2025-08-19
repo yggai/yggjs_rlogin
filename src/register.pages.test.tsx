@@ -10,6 +10,7 @@ import { NeumorphismRegisterPage } from './lib/neumorphism_login'
 import { DarkNeonRegisterPage } from './lib/dark_neon_login'
 import { GradientClashRegisterPage } from './lib/gradient_clash_login'
 import { IllustrationRegisterPage } from './lib/illustration_login'
+import { SplitBrandRegisterPage } from './lib/split_brand_login'
 
 async function fillAndSubmit(fields: {
   username?: string
@@ -91,4 +92,5 @@ runSuite('Neumorphism', NeumorphismRegisterPage)
 runSuite('DarkNeon', DarkNeonRegisterPage)
 runSuite('GradientClash', GradientClashRegisterPage)
 runSuite('Illustration', IllustrationRegisterPage)
+runSuite('SplitBrand', SplitBrandRegisterPage)
 
