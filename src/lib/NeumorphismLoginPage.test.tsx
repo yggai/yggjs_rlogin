@@ -3,6 +3,17 @@ import userEvent from '@testing-library/user-event'
 import { describe, it, expect, vi } from 'vitest'
 import { NeumorphismLoginPage } from './NeumorphismLoginPage'
 
+// Mock captcha utilities
+vi.mock('./captcha', () => ({
+  createCaptchaData: vi.fn(() => ({
+    text: 'ABC4',
+    imageUrl: 'data:image/svg+xml;base64,test'
+  })),
+  validateCaptcha: vi.fn((input: string, expected: string) =>
+    input.toUpperCase().trim() === expected.toUpperCase().trim()
+  )
+}))
+
 describe('NeumorphismLoginPage', () => {
   const mockOnLogin = vi.fn()
 
@@ -236,13 +247,107 @@ describe('NeumorphismLoginPage', () => {
   it('displays error messages with proper role', async () => {
     const user = userEvent.setup()
     render(<NeumorphismLoginPage onLogin={mockOnLogin} />)
-    
+
     const submitButton = screen.getByRole('button', { name: '登录' })
     await user.click(submitButton)
-    
+
     await waitFor(() => {
       const errorMessages = screen.getAllByRole('alert')
       expect(errorMessages.length).toBeGreaterThan(0)
+    })
+  })
+
+  describe('with captcha enabled', () => {
+    it('renders captcha input when showCaptcha is true', () => {
+      render(
+        <NeumorphismLoginPage
+          onLogin={mockOnLogin}
+          showCaptcha={true}
+        />
+      )
+
+      expect(screen.getByPlaceholderText('验证码')).toBeInTheDocument()
+      expect(screen.getByAltText('验证码图片')).toBeInTheDocument()
+      expect(screen.getByLabelText('点击刷新验证码')).toBeInTheDocument()
+    })
+
+    it('does not render captcha input when showCaptcha is false', () => {
+      render(
+        <NeumorphismLoginPage
+          onLogin={mockOnLogin}
+          showCaptcha={false}
+        />
+      )
+
+      expect(screen.queryByPlaceholderText('验证码')).not.toBeInTheDocument()
+      expect(screen.queryByAltText('验证码图片')).not.toBeInTheDocument()
+    })
+
+    it('validates captcha and shows error', async () => {
+      const user = userEvent.setup()
+      render(
+        <NeumorphismLoginPage
+          onLogin={mockOnLogin}
+          showCaptcha={true}
+        />
+      )
+
+      const usernameInput = screen.getByPlaceholderText('用户名')
+      const passwordInput = screen.getByPlaceholderText('密码')
+      const captchaInput = screen.getByPlaceholderText('验证码')
+      const submitButton = screen.getByRole('button', { name: '登录' })
+
+      await user.type(usernameInput, 'validuser')
+      await user.type(passwordInput, 'validpass')
+      await user.type(captchaInput, 'WRONG') // Wrong captcha
+      await user.click(submitButton)
+
+      await waitFor(() => {
+        expect(screen.getByText('验证码不正确')).toBeInTheDocument()
+      })
+
+      expect(mockOnLogin).not.toHaveBeenCalled()
+    })
+
+    it('calls onLogin with captcha when validation passes', async () => {
+      const user = userEvent.setup()
+      render(
+        <NeumorphismLoginPage
+          onLogin={mockOnLogin}
+          showCaptcha={true}
+        />
+      )
+
+      const usernameInput = screen.getByPlaceholderText('用户名')
+      const passwordInput = screen.getByPlaceholderText('密码')
+      const captchaInput = screen.getByPlaceholderText('验证码')
+      const submitButton = screen.getByRole('button', { name: '登录' })
+
+      await user.type(usernameInput, 'validuser')
+      await user.type(passwordInput, 'validpass')
+      await user.type(captchaInput, 'ABC4') // Correct captcha
+      await user.click(submitButton)
+
+      await waitFor(() => {
+        expect(mockOnLogin).toHaveBeenCalledWith({
+          username: 'validuser',
+          password: 'validpass',
+          captcha: 'ABC4'
+        })
+      })
+    })
+
+    it('uses custom captcha label', () => {
+      render(
+        <NeumorphismLoginPage
+          onLogin={mockOnLogin}
+          showCaptcha={true}
+          captchaLabel="图形验证码"
+        />
+      )
+
+      expect(screen.getByPlaceholderText('图形验证码')).toBeInTheDocument()
+      expect(screen.getByLabelText('图形验证码')).toBeInTheDocument()
     })
   })
 })

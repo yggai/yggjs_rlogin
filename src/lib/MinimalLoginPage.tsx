@@ -1,9 +1,11 @@
 import React from 'react'
-import { Rule, validateRules, usernameRule, passwordRule } from './valid'
+import { Rule, validateRules, usernameRule, passwordRule, customRule } from './valid'
+import { CaptchaInput } from './CaptchaInput'
+import { CaptchaConfig, validateCaptcha } from './captcha'
 import './MinimalLoginPage.css'
 
 export type MinimalLoginPageProps = {
-  onLogin: (payload: { username: string; password: string }) => void | Promise<void>
+  onLogin: (payload: { username: string; password: string; captcha?: string }) => void | Promise<void>
   title?: string
   logo?: string | React.ReactNode
   usernameLabel?: string
@@ -11,6 +13,10 @@ export type MinimalLoginPageProps = {
   submitLabel?: string
   usernameRules?: Rule[]
   passwordRules?: Rule[]
+  showCaptcha?: boolean
+  captchaLabel?: string
+  captchaRules?: Rule[]
+  captchaConfig?: CaptchaConfig
 }
 
 export const MinimalLoginPage: React.FC<MinimalLoginPageProps> = ({
@@ -22,16 +28,32 @@ export const MinimalLoginPage: React.FC<MinimalLoginPageProps> = ({
   submitLabel = '登录',
   usernameRules = [usernameRule('用户名长度需为 3-36 个字符')],
   passwordRules = [passwordRule('密码长度需为 6-36 个字符')],
+  showCaptcha = false,
+  captchaLabel = '验证码',
+  captchaRules,
+  captchaConfig = {},
 }) => {
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
+  const [captcha, setCaptcha] = React.useState('')
+  const [captchaText, setCaptchaText] = React.useState('')
   const [showPassword, setShowPassword] = React.useState(false)
   const [loading, setLoading] = React.useState(false)
-  const [errors, setErrors] = React.useState<{ username?: string; password?: string }>({})
+  const [errors, setErrors] = React.useState<{ username?: string; password?: string; captcha?: string }>({})
+
+  // 默认验证码验证规则
+  const defaultCaptchaRules = React.useMemo(() => [
+    customRule((value: string) => {
+      if (!captchaText) return '验证码未生成'
+      return validateCaptcha(value, captchaText) ? true : '验证码不正确'
+    })
+  ], [captchaText])
+
+  const finalCaptchaRules = captchaRules || defaultCaptchaRules
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const errs: { username?: string; password?: string } = {}
+    const errs: { username?: string; password?: string; captcha?: string } = {}
 
     const uErr = await validateRules(username, usernameRules)
     if (uErr) errs.username = uErr
@@ -39,15 +61,28 @@ export const MinimalLoginPage: React.FC<MinimalLoginPageProps> = ({
     const pErr = await validateRules(password, passwordRules)
     if (pErr) errs.password = pErr
 
+    if (showCaptcha) {
+      const cErr = await validateRules(captcha, finalCaptchaRules)
+      if (cErr) errs.captcha = cErr
+    }
+
     setErrors(errs)
     if (Object.keys(errs).length > 0) return
 
     if (!onLogin) return
     try {
       setLoading(true)
-      await onLogin({ username, password })
+      const payload = { username, password, ...(showCaptcha && { captcha }) }
+      await onLogin(payload)
     } finally {
       setLoading(false)
+    }
+  }
+
+  const handleCaptchaValidate = (isValid: boolean, captchaTextValue: string) => {
+    setCaptchaText(captchaTextValue)
+    if (errors.captcha && isValid) {
+      setErrors(prev => ({ ...prev, captcha: undefined }))
     }
   }
 
@@ -127,6 +162,25 @@ export const MinimalLoginPage: React.FC<MinimalLoginPageProps> = ({
               </div>
             )}
           </div>
+
+          {/* 验证码输入框 */}
+          {showCaptcha && (
+            <div className="yggjs-minimal-login-field">
+              <CaptchaInput
+                value={captcha}
+                onChange={setCaptcha}
+                onValidate={handleCaptchaValidate}
+                placeholder={captchaLabel}
+                config={captchaConfig}
+                aria-label={captchaLabel}
+              />
+              {errors.captcha && (
+                <div className="yggjs-minimal-login-error" role="alert">
+                  {errors.captcha}
+                </div>
+              )}
+            </div>
+          )}
 
           {/* 登录按钮 */}
           <button

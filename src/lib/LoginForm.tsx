@@ -1,8 +1,10 @@
 import React from 'react'
-import { Rule, validateRules, usernameRule, passwordRule } from './valid'
+import { Rule, validateRules, usernameRule, passwordRule, customRule } from './valid'
+import { CaptchaInput } from './CaptchaInput'
+import { CaptchaConfig, validateCaptcha } from './captcha'
 
 export type LoginFormProps = {
-  onSubmit?: (payload: { username: string; password: string }) => void | Promise<void>
+  onSubmit?: (payload: { username: string; password: string; captcha?: string }) => void | Promise<void>
   title?: string
   usernameLabel?: string
   passwordLabel?: string
@@ -12,6 +14,10 @@ export type LoginFormProps = {
   // antd 风格的 rules
   usernameRules?: Rule[]
   passwordRules?: Rule[]
+  showCaptcha?: boolean
+  captchaLabel?: string
+  captchaRules?: Rule[]
+  captchaConfig?: CaptchaConfig
 }
 
 export const LoginForm: React.FC<LoginFormProps> = ({
@@ -24,16 +30,32 @@ export const LoginForm: React.FC<LoginFormProps> = ({
   style,
   usernameRules = [usernameRule('账号长度需为 3-36 个字符')],
   passwordRules = [passwordRule('密码长度需为 6-36 个字符')],
+  showCaptcha = false,
+  captchaLabel = '验证码',
+  captchaRules,
+  captchaConfig = {},
 }) => {
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
+  const [captcha, setCaptcha] = React.useState('')
+  const [captchaText, setCaptchaText] = React.useState('')
   const [showPwd, setShowPwd] = React.useState(false)
   const [loading, setLoading] = React.useState(false)
-  const [errors, setErrors] = React.useState<{ username?: string; password?: string }>({})
+  const [errors, setErrors] = React.useState<{ username?: string; password?: string; captcha?: string }>({})
+
+  // 默认验证码验证规则
+  const defaultCaptchaRules = React.useMemo(() => [
+    customRule((value: string) => {
+      if (!captchaText) return '验证码未生成'
+      return validateCaptcha(value, captchaText) ? true : '验证码不正确'
+    })
+  ], [captchaText])
+
+  const finalCaptchaRules = captchaRules || defaultCaptchaRules
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const errs: { username?: string; password?: string } = {}
+    const errs: { username?: string; password?: string; captcha?: string } = {}
 
     const uErr = await validateRules(username, usernameRules)
     if (uErr) errs.username = uErr
@@ -41,15 +63,28 @@ export const LoginForm: React.FC<LoginFormProps> = ({
     const pErr = await validateRules(password, passwordRules)
     if (pErr) errs.password = pErr
 
+    if (showCaptcha) {
+      const cErr = await validateRules(captcha, finalCaptchaRules)
+      if (cErr) errs.captcha = cErr
+    }
+
     setErrors(errs)
     if (Object.keys(errs).length > 0) return
 
     if (!onSubmit) return
     try {
       setLoading(true)
-      await onSubmit({ username, password })
+      const payload = { username, password, ...(showCaptcha && { captcha }) }
+      await onSubmit(payload)
     } finally {
       setLoading(false)
+    }
+  }
+
+  const handleCaptchaValidate = (isValid: boolean, captchaTextValue: string) => {
+    setCaptchaText(captchaTextValue)
+    if (errors.captcha && isValid) {
+      setErrors(prev => ({ ...prev, captcha: undefined }))
     }
   }
 
@@ -115,6 +150,26 @@ export const LoginForm: React.FC<LoginFormProps> = ({
           </div>
         )}
       </div>
+      {showCaptcha && (
+        <div className="yggjs-rlogin-field">
+          <label className="yggjs-rlogin-label" htmlFor="yggjs-rlogin-captcha">
+            {captchaLabel}
+          </label>
+          <CaptchaInput
+            value={captcha}
+            onChange={setCaptcha}
+            onValidate={handleCaptchaValidate}
+            placeholder={captchaLabel}
+            config={captchaConfig}
+            aria-label={captchaLabel}
+          />
+          {errors.captcha && (
+            <div id="yggjs-rlogin-captcha-err" role="alert" className="yggjs-rlogin-error">
+              {errors.captcha}
+            </div>
+          )}
+        </div>
+      )}
       <button className="yggjs-rlogin-button" type="submit" disabled={loading}>
         {loading ? '...' : submitLabel}
       </button>
