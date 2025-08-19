@@ -83,7 +83,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
         <div className="yggjs-rlogin-input-wrap">
           <input
             id="yggjs-rlogin-password"
-            className="yggjs-rlogin-input"
+            className={`yggjs-rlogin-input yggjs-rlogin-input--has-eye`}
             type={showPwd ? 'text' : 'password'}
             aria-invalid={!!errors.password}
             aria-describedby={errors.password ? 'yggjs-rlogin-password-err' : undefined}

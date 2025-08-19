@@ -4,10 +4,11 @@
 .yggjs-rlogin-title{font-size:18px;font-weight:600;margin-bottom:16px;text-align:center}
 .yggjs-rlogin-field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
 .yggjs-rlogin-label{font-size:12px;color:#6b7280}
-.yggjs-rlogin-input{height:36px;padding:0 10px;border:1px solid #d1d5db;border-radius:8px;outline:none}
+.yggjs-rlogin-input{width:100%;box-sizing:border-box;height:36px;padding:0 10px;border:1px solid #d1d5db;border-radius:8px;outline:none}
+.yggjs-rlogin-input--has-eye{padding-right:36px}
 .yggjs-rlogin-input:focus{border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,.15)}
-.yggjs-rlogin-input-wrap{position:relative;display:flex;align-items:center}
-.yggjs-rlogin-eye{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:transparent;border:none;cursor:pointer;padding:4px}
+.yggjs-rlogin-input-wrap{position:relative;display:block;width:100%}
+.yggjs-rlogin-eye{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:transparent;border:none;cursor:pointer;padding:4px;line-height:0}
 .yggjs-rlogin-error{color:#ef4444;font-size:12px;margin-top:4px}
 .yggjs-rlogin-button{width:100%;height:38px;border:none;border-radius:8px;background:#6366f1;color:#fff;font-weight:600;cursor:pointer}
 .yggjs-rlogin-button:disabled{opacity:.6;cursor:not-allowed}
