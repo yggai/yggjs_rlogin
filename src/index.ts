@@ -6,6 +6,8 @@ export { MinimalLoginPage } from './lib/MinimalLoginPage'
 export type { MinimalLoginPageProps } from './lib/MinimalLoginPage'
 export { GlassLoginPage } from './lib/GlassLoginPage'
 export type { GlassLoginPageProps } from './lib/GlassLoginPage'
+export { NeumorphismLoginPage } from './lib/NeumorphismLoginPage'
+export type { NeumorphismLoginPageProps } from './lib/NeumorphismLoginPage'
 export * from './lib/valid'
 import './styles.css'
 
