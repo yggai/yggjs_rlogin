@@ -303,11 +303,6 @@
   }
 }
 
-/* 确保无滚动条 */
-html, body {
-  overflow: hidden;
-}
-
 .yggjs-glass-login-page * {
   box-sizing: border-box;
 }

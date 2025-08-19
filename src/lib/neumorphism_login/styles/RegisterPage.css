@@ -15,11 +15,11 @@
   padding: 0;
   margin: 0;
   /* 低饱和米白背景 */
-  background: linear-gradient(135deg, 
-    #f5f5f0 0%, 
-    #f0f0eb 25%, 
-    #ebebeb 50%, 
-    #f0f0f5 75%, 
+  background: linear-gradient(135deg,
+    #f5f5f0 0%,
+    #f0f0eb 25%,
+    #ebebeb 50%,
+    #f0f0f5 75%,
     #f5f5f0 100%);
 }
 
@@ -41,13 +41,13 @@
   position: relative;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 
+  box-shadow:
     20px 20px 40px rgba(0, 0, 0, 0.1),
     -20px -20px 40px rgba(255, 255, 255, 0.8);
 }
 
 .yggjs-neumorphism-register-card:hover {
-  box-shadow: 
+  box-shadow:
     25px 25px 50px rgba(0, 0, 0, 0.12),
     -25px -25px 50px rgba(255, 255, 255, 0.9);
 }
@@ -73,7 +73,7 @@
   font-weight: 700;
   color: #666666;
   margin: 0;
-  text-shadow: 
+  text-shadow:
     2px 2px 4px rgba(255, 255, 255, 0.8),
     -1px -1px 2px rgba(0, 0, 0, 0.1);
   letter-spacing: -0.5px;
@@ -146,14 +146,14 @@
   -webkit-appearance: none;
   appearance: none;
   /* 微凸按钮阴影 */
-  box-shadow: 
+  box-shadow:
     12px 12px 24px rgba(0, 0, 0, 0.1),
     -12px -12px 24px rgba(255, 255, 255, 0.8);
 }
 
 .yggjs-neumorphism-register-button:hover {
   color: #333333;
-  box-shadow: 
+  box-shadow:
     16px 16px 32px rgba(0, 0, 0, 0.12),
     -16px -16px 32px rgba(255, 255, 255, 0.9);
   transform: translateY(-2px);
@@ -161,7 +161,7 @@
 
 .yggjs-neumorphism-register-button:active {
   transform: translateY(0);
-  box-shadow: 
+  box-shadow:
     8px 8px 16px rgba(0, 0, 0, 0.1),
     -8px -8px 16px rgba(255, 255, 255, 0.8);
 }
@@ -170,7 +170,7 @@
   color: #cccccc;
   cursor: not-allowed;
   transform: none;
-  box-shadow: 
+  box-shadow:
     6px 6px 12px rgba(0, 0, 0, 0.05),
     -6px -6px 12px rgba(255, 255, 255, 0.8);
 }
@@ -210,32 +210,32 @@
     padding: 20px;
     max-width: 100%;
   }
-  
+
   .yggjs-neumorphism-register-card {
     padding: 32px 24px;
     border-radius: 24px;
   }
-  
+
   .yggjs-neumorphism-register-logo-text {
     font-size: 24px;
   }
-  
+
   .yggjs-neumorphism-register-input {
     height: 48px;
     font-size: 15px;
     border-radius: 18px;
   }
-  
+
   .yggjs-neumorphism-register-button {
     height: 48px;
     font-size: 15px;
     border-radius: 18px;
   }
-  
+
   .yggjs-neumorphism-register-field {
     margin-bottom: 18px;
   }
-  
+
   .yggjs-neumorphism-register-header {
     margin-bottom: 28px;
   }
@@ -246,36 +246,36 @@
     padding: 28px 20px;
     border-radius: 20px;
   }
-  
+
   .yggjs-neumorphism-register-logo-text {
     font-size: 22px;
   }
-  
+
   .yggjs-neumorphism-register-input {
     height: 44px;
     padding: 0 16px;
     font-size: 14px;
     border-radius: 16px;
   }
-  
+
   .yggjs-neumorphism-register-input--password {
     padding-right: 52px;
   }
-  
+
   .yggjs-neumorphism-register-button {
     height: 44px;
     font-size: 14px;
     border-radius: 16px;
   }
-  
+
   .yggjs-neumorphism-register-field {
     margin-bottom: 16px;
   }
-  
+
   .yggjs-neumorphism-register-error {
     font-size: 12px;
   }
-  
+
   .yggjs-neumorphism-checkbox-label {
     font-size: 13px;
   }
@@ -288,20 +288,20 @@
   border-radius: 20px;
   height: 52px;
   width: 110px;
-  box-shadow: 
+  box-shadow:
     6px 6px 12px rgba(0, 0, 0, 0.1),
     -6px -6px 12px rgba(255, 255, 255, 0.8);
 }
 
 .yggjs-neumorphism-register-page .yggjs-captcha-image:hover {
-  box-shadow: 
+  box-shadow:
     8px 8px 16px rgba(0, 0, 0, 0.12),
     -8px -8px 16px rgba(255, 255, 255, 0.9);
 }
 
 .yggjs-neumorphism-register-page .yggjs-captcha-image:focus {
   outline: none;
-  box-shadow: 
+  box-shadow:
     8px 8px 16px rgba(0, 0, 0, 0.12),
     -8px -8px 16px rgba(255, 255, 255, 0.9),
     0 0 0 3px rgba(59, 130, 246, 0.1);
@@ -314,3 +314,18 @@
     border-radius: 16px;
   }
 }
+
+/* 让注册页验证码区域与其他输入框一致（新拟态风格） */
+.yggjs-neumorphism-register-page .yggjs-captcha-input-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 验证码输入框高度与圆角对齐 */
+.yggjs-neumorphism-register-page .yggjs-captcha-input-field.yggjs-neumorphism-register-input {
+  height: 52px;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+

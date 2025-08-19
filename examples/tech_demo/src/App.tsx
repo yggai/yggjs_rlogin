@@ -13,6 +13,15 @@ import GlassLoginNoCaptchaDemo from './pages/GlassLoginNoCaptchaDemo'
 import GlassLoginWithCaptchaDemo from './pages/GlassLoginWithCaptchaDemo'
 import NeumorphismLoginNoCaptchaDemo from './pages/NeumorphismLoginNoCaptchaDemo'
 import NeumorphismLoginWithCaptchaDemo from './pages/NeumorphismLoginWithCaptchaDemo'
+// 注册 Demos
+import BasicRegisterNoCaptchaDemo from './pages/BasicRegisterNoCaptchaDemo'
+import BasicRegisterWithCaptchaDemo from './pages/BasicRegisterWithCaptchaDemo'
+import MinimalRegisterNoCaptchaDemo from './pages/MinimalRegisterNoCaptchaDemo'
+import MinimalRegisterWithCaptchaDemo from './pages/MinimalRegisterWithCaptchaDemo'
+import GlassRegisterNoCaptchaDemo from './pages/GlassRegisterNoCaptchaDemo'
+import GlassRegisterWithCaptchaDemo from './pages/GlassRegisterWithCaptchaDemo'
+import NeumorphismRegisterNoCaptchaDemo from './pages/NeumorphismRegisterNoCaptchaDemo'
+import NeumorphismRegisterWithCaptchaDemo from './pages/NeumorphismRegisterWithCaptchaDemo'
 import ComparisonPage from './pages/ComparisonPage'
 import DocumentationPage from './pages/DocumentationPage'
 
@@ -175,6 +184,123 @@ function App() {
                 transition={pageTransition}
               >
                 <NeumorphismLoginWithCaptchaDemo />
+              </motion.div>
+            }
+          />
+
+          {/* 注册页面路由 */}
+          <Route
+            path="/basic/register"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <BasicRegisterNoCaptchaDemo />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/basic/register/captcha"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <BasicRegisterWithCaptchaDemo />
+              </motion.div>
+            }
+          />
+
+          <Route
+            path="/minimal/register"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <MinimalRegisterNoCaptchaDemo />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/minimal/register/captcha"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <MinimalRegisterWithCaptchaDemo />
+              </motion.div>
+            }
+          />
+
+          <Route
+            path="/glass/register"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <GlassRegisterNoCaptchaDemo />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/glass/register/captcha"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <GlassRegisterWithCaptchaDemo />
+              </motion.div>
+            }
+          />
+
+          <Route
+            path="/neumorphism/register"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <NeumorphismRegisterNoCaptchaDemo />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/neumorphism/register/captcha"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <NeumorphismRegisterWithCaptchaDemo />
               </motion.div>
             }
           />

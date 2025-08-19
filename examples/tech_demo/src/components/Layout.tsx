@@ -41,12 +41,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   const navItems = [
     { path: '/', label: '首页', icon: Home },
-    { path: '/basic', label: '基础风格', icon: Layers },
-    { path: '/minimal', label: '极简风格', icon: Minimize2 },
-    { path: '/glass', label: '玻璃风格', icon: Droplets },
-    { path: '/neumorphism', label: '新拟态', icon: Circle },
-    { path: '/comparison', label: '对比展示', icon: BarChart3 },
-    { path: '/docs', label: '文档', icon: BookOpen }
+    { path: '/basic', label: '基础登录', icon: Layers },
+    { path: '/minimal', label: '极简登录', icon: Minimize2 },
+    { path: '/glass', label: '玻璃登录', icon: Droplets },
+    { path: '/neumorphism', label: '新拟态登录', icon: Circle },
   ]
 
   return (

@@ -57,6 +57,31 @@ body {
   min-height: 100vh;
 }
 
+/* 全局科技感滚动条（跨浏览器） */
+/* WebKit */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(0,255,255,0.8), rgba(102,0,255,0.8));
+  border-radius: 8px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00ffff, #6600ff);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00ffff transparent;
+}
+
+
 /* 滚动条样式 */
 ::-webkit-scrollbar {
   width: 8px;

@@ -224,11 +224,6 @@
   }
 }
 
-/* 确保无滚动条 */
-html, body {
-  overflow: hidden;
-}
-
 .yggjs-minimal-login-page * {
   box-sizing: border-box;
 }

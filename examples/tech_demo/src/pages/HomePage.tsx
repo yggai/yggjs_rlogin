@@ -6,7 +6,7 @@ import './HomePage.css'
 
 const navItems = [
   {
-    group: '基础组件演示',
+    group: '基础组件演示（登录）',
     items: [
       { label: '基础风格（无验证码）', to: '/basic', icon: Layers },
       { label: '基础风格（带验证码）', to: '/basic/captcha', icon: Layers },
@@ -18,6 +18,20 @@ const navItems = [
       { label: '新拟态风格（带验证码）', to: '/neumorphism/captcha', icon: Circle },
     ]
   },
+  {
+    group: '注册组件演示',
+    items: [
+      { label: '基础风格注册（无验证码）', to: '/basic/register', icon: Layers },
+      { label: '基础风格注册（带验证码）', to: '/basic/register/captcha', icon: Layers },
+      { label: '极简风格注册（无验证码）', to: '/minimal/register', icon: Minimize2 },
+      { label: '极简风格注册（带验证码）', to: '/minimal/register/captcha', icon: Minimize2 },
+      { label: '玻璃风格注册（无验证码）', to: '/glass/register', icon: Droplets },
+      { label: '玻璃风格注册（带验证码）', to: '/glass/register/captcha', icon: Droplets },
+      { label: '新拟态风格注册（无验证码）', to: '/neumorphism/register', icon: Circle },
+      { label: '新拟态风格注册（带验证码）', to: '/neumorphism/register/captcha', icon: Circle },
+    ]
+  },
+
   {
     group: '其他页面',
     items: [
@@ -38,7 +52,7 @@ const HomePage: React.FC = () => {
 
       {/* 顶部区域 */}
       <header className="nav-home__header">
-        <motion.h1 
+        <motion.h1
           className="nav-home__title"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
