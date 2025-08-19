@@ -1,0 +1,40 @@
+/* 插画故事主题：柔和粉蓝渐变天空，左 60% 插画，右登录/注册卡片 */
+.yggjs-illustration-page {
+  min-height: 100vh; min-width: 100vw; overflow: hidden;
+  display: flex; align-items: stretch; justify-content: center;
+  background: linear-gradient(180deg, #e0f2fe, #fce7f3);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.yggjs-illustration-left { flex: 0 0 var(--split-pct, 60%); display:flex; align-items:center; justify-content:center; position:relative; }
+.yggjs-illustration-right { flex: 1; display:flex; align-items:center; justify-content:center; padding: 40px 24px; }
+
+.yggjs-illustration-card {
+  width: 100%; max-width: 420px; background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 40px 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.yggjs-illustration-title { font-size: 28px; font-weight: 600; color: #0f172a; margin: 0 0 20px; text-align:center; }
+
+.yggjs-illustration-field { margin-bottom: 16px; }
+.yggjs-illustration-input { width:100%; height:48px; padding:0 14px; border:1px solid #e5e7eb; border-radius: 10px; outline:none; background:#fff; font-size:16px; transition: box-shadow .2s, border-color .2s; }
+.yggjs-illustration-input::placeholder{ color:#94a3b8; }
+.yggjs-illustration-input:focus{ border-color:#93c5fd; box-shadow: 0 0 0 3px rgba(147,197,253,.35); }
+.yggjs-illustration-input:disabled{ opacity:.6; cursor:not-allowed; }
+
+.yggjs-illustration-button{ width:100%; height:48px; border:none; border-radius: 10px; color:#fff; font-size:16px; font-weight:600; cursor:pointer;
+  background-image: linear-gradient(90deg, #60a5fa, #f472b6); box-shadow: 0 8px 18px rgba(96,165,250,.35); transition: transform .2s ease, background-position .3s ease, box-shadow .2s ease; }
+.yggjs-illustration-button:hover{ transform: translateY(-1px); background-position: 100% 0; box-shadow: 0 10px 22px rgba(96,165,250,.45) }
+.yggjs-illustration-button:disabled{ opacity:.6; cursor:not-allowed; transform:none; }
+
+.yggjs-illustration-error{ color:#dc2626; font-size:14px; margin-top:8px; }
+
+/* 兼容验证码图片 */
+.yggjs-illustration-page .yggjs-captcha-image{ background:#fff; border:1px solid #e5e7eb; border-radius:10px; height:48px; width:120px; }
+
+/* 响应式 */
+@media (max-width: 960px){
+  .yggjs-illustration-left{ display:none; }
+  .yggjs-illustration-right{ flex: 1 0 100%; }
+}
+

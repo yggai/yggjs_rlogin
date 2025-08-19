@@ -9,6 +9,7 @@ import { GlassRegisterPage } from '../src/lib/glass_login'
 import { NeumorphismRegisterPage } from '../src/lib/neumorphism_login'
 import { DarkNeonRegisterPage } from '../src/lib/dark_neon_login'
 import { GradientClashRegisterPage } from '../src/lib/gradient_clash_login'
+import { IllustrationRegisterPage } from '../src/lib/illustration_login'
 
 async function fillAndSubmit(fields: {
   username?: string
@@ -91,4 +92,5 @@ runSuite('Glass', GlassRegisterPage)
 runSuite('Neumorphism', NeumorphismRegisterPage)
 runSuite('DarkNeon', DarkNeonRegisterPage)
 runSuite('GradientClash', GradientClashRegisterPage)
+runSuite('Illustration', IllustrationRegisterPage)
 

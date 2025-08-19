@@ -19,6 +19,9 @@ export * from './lib/dark_neon_login'
 // 渐变撞色风格登录注册
 export * from './lib/gradient_clash_login'
 
+// 插画故事风格登录注册
+export * from './lib/illustration_login'
+
 // 向后兼容的导出（保留旧的API）
 // 注意：旧的组件已迁移到对应的风格目录中
 // 请使用新的导入方式：

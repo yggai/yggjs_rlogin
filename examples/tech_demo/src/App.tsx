@@ -31,6 +31,10 @@ import GradientClashRegisterNoCaptchaDemo from './pages/GradientClashRegisterNoC
 import GradientClashRegisterWithCaptchaDemo from './pages/GradientClashRegisterWithCaptchaDemo'
 import ComparisonPage from './pages/ComparisonPage'
 import DocumentationPage from './pages/DocumentationPage'
+import IllustrationLoginNoCaptchaDemo from './pages/IllustrationLoginNoCaptchaDemo'
+import IllustrationLoginWithCaptchaDemo from './pages/IllustrationLoginWithCaptchaDemo'
+import IllustrationRegisterNoCaptchaDemo from './pages/IllustrationRegisterNoCaptchaDemo'
+import IllustrationRegisterWithCaptchaDemo from './pages/IllustrationRegisterWithCaptchaDemo'
 
 // 布局组件
 import Layout from './components/Layout'
@@ -225,6 +229,10 @@ function App() {
             }
           />
 
+          {/* 插画故事登录页面路由 */}
+          <Route path="/illustration" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><IllustrationLoginNoCaptchaDemo /></motion.div>} />
+          <Route path="/illustration/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><IllustrationLoginWithCaptchaDemo /></motion.div>} />
+
           {/* 注册页面路由 */}
           <Route
             path="/basic/register"
@@ -371,6 +379,10 @@ function App() {
               </motion.div>
             }
           />
+
+          {/* 插画故事注册页面路由 */}
+          <Route path="/illustration/register" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><IllustrationRegisterNoCaptchaDemo /></motion.div>} />
+          <Route path="/illustration/register/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><IllustrationRegisterWithCaptchaDemo /></motion.div>} />
 
           {/* 渐变撞色登录页面路由 */}
           <Route path="/gradient" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><GradientClashLoginNoCaptchaDemo /></motion.div>} />

@@ -60,6 +60,15 @@ const navItems = [
     ]
   },
   {
+    group: '插画故事风格',
+    items: [
+      { label: '不带验证码登录', to: '/illustration', icon: Sparkles },
+      { label: '带验证码登录', to: '/illustration/captcha', icon: Sparkles },
+      { label: '不带验证码注册', to: '/illustration/register', icon: Sparkles },
+      { label: '带验证码注册', to: '/illustration/register/captcha', icon: Sparkles },
+    ]
+  },
+  {
     group: '其他页面',
     items: [
       { label: '对比展示', to: '/comparison', icon: Shield },
