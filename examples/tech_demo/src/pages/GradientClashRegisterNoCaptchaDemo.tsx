@@ -1,0 +1,21 @@
+import React from 'react'
+import { GradientClashRegisterPage } from 'yggjs_rlogin'
+import 'yggjs_rlogin/styles.css'
+
+const GradientClashRegisterNoCaptchaDemo: React.FC = () => {
+  const handleRegister = async (payload: any) => {
+    console.log('GradientClash no-captcha register:', payload)
+    await new Promise(r => setTimeout(r, 600))
+  }
+
+  return (
+    <GradientClashRegisterPage
+      onRegister={handleRegister}
+      title="渐变撞色注册"
+      showCaptcha={false}
+    />
+  )
+}
+
+export default GradientClashRegisterNoCaptchaDemo
+

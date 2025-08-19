@@ -25,6 +25,10 @@ import NeumorphismRegisterNoCaptchaDemo from './pages/NeumorphismRegisterNoCaptc
 import NeumorphismRegisterWithCaptchaDemo from './pages/NeumorphismRegisterWithCaptchaDemo'
 import DarkNeonRegisterNoCaptchaDemo from './pages/DarkNeonRegisterNoCaptchaDemo'
 import DarkNeonRegisterWithCaptchaDemo from './pages/DarkNeonRegisterWithCaptchaDemo'
+import GradientClashLoginNoCaptchaDemo from './pages/GradientClashLoginNoCaptchaDemo'
+import GradientClashLoginWithCaptchaDemo from './pages/GradientClashLoginWithCaptchaDemo'
+import GradientClashRegisterNoCaptchaDemo from './pages/GradientClashRegisterNoCaptchaDemo'
+import GradientClashRegisterWithCaptchaDemo from './pages/GradientClashRegisterWithCaptchaDemo'
 import ComparisonPage from './pages/ComparisonPage'
 import DocumentationPage from './pages/DocumentationPage'
 
@@ -367,6 +371,14 @@ function App() {
               </motion.div>
             }
           />
+
+          {/* 渐变撞色登录页面路由 */}
+          <Route path="/gradient" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><GradientClashLoginNoCaptchaDemo /></motion.div>} />
+          <Route path="/gradient/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><GradientClashLoginWithCaptchaDemo /></motion.div>} />
+          {/* 渐变撞色注册页面路由 */}
+          <Route path="/gradient/register" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><GradientClashRegisterNoCaptchaDemo /></motion.div>} />
+          <Route path="/gradient/register/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><GradientClashRegisterWithCaptchaDemo /></motion.div>} />
+
           <Route
             path="/comparison"
             element={
