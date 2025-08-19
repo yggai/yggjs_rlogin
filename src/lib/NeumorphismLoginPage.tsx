@@ -176,6 +176,7 @@ export const NeumorphismLoginPage: React.FC<NeumorphismLoginPageProps> = ({
                   placeholder={captchaLabel}
                   config={captchaConfig}
                   aria-label={captchaLabel}
+                  inputClassName="yggjs-neumorphism-login-input"
                 />
                 {errors.captcha && (
                   <div className="yggjs-neumorphism-login-error" role="alert">

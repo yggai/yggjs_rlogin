@@ -174,6 +174,7 @@ export const GlassLoginPage: React.FC<GlassLoginPageProps> = ({
                   placeholder={captchaLabel}
                   config={captchaConfig}
                   aria-label={captchaLabel}
+                  inputClassName="yggjs-glass-login-input"
                 />
                 {errors.captcha && (
                   <div className="yggjs-glass-login-error" role="alert">

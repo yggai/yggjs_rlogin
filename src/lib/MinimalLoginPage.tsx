@@ -173,6 +173,7 @@ export const MinimalLoginPage: React.FC<MinimalLoginPageProps> = ({
                 placeholder={captchaLabel}
                 config={captchaConfig}
                 aria-label={captchaLabel}
+                inputClassName="yggjs-minimal-login-input"
               />
               {errors.captcha && (
                 <div className="yggjs-minimal-login-error" role="alert">

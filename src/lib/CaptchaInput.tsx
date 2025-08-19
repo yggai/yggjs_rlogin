@@ -11,6 +11,7 @@ export interface CaptchaInputProps {
   config?: CaptchaConfig
   disabled?: boolean
   'aria-label'?: string
+  inputClassName?: string // 用于继承父容器的输入框样式
 }
 
 export const CaptchaInput: React.FC<CaptchaInputProps> = ({
@@ -21,7 +22,8 @@ export const CaptchaInput: React.FC<CaptchaInputProps> = ({
   className = '',
   config = {},
   disabled = false,
-  'aria-label': ariaLabel = '验证码'
+  'aria-label': ariaLabel = '验证码',
+  inputClassName = ''
 }) => {
   const [captchaData, setCaptchaData] = useState<CaptchaData>(() => createCaptchaData(config))
 
@@ -75,7 +77,7 @@ export const CaptchaInput: React.FC<CaptchaInputProps> = ({
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
-          className="yggjs-captcha-input-field"
+          className={`yggjs-captcha-input-field ${inputClassName}`}
           disabled={disabled}
           aria-label={ariaLabel}
           autoComplete="off"

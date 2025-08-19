@@ -162,6 +162,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
             placeholder={captchaLabel}
             config={captchaConfig}
             aria-label={captchaLabel}
+            inputClassName="yggjs-rlogin-input"
           />
           {errors.captcha && (
             <div id="yggjs-rlogin-captcha-err" role="alert" className="yggjs-rlogin-error">

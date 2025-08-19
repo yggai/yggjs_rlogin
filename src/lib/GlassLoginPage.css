@@ -317,6 +317,34 @@
   .yggjs-glass-login-logo-text {
     font-size: 24px;
   }
+
+  .yggjs-glass-login-page .yggjs-captcha-image {
+    height: 52px;
+    width: 100px;
+    border-radius: 14px;
+  }
+}
+
+/* 验证码图片样式 */
+.yggjs-glass-login-page .yggjs-captcha-image {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  height: 56px;
+  width: 120px;
+}
+
+.yggjs-glass-login-page .yggjs-captcha-image:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.yggjs-glass-login-page .yggjs-captcha-image:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
 }
 
 /* 确保无滚动条 */
