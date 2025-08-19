@@ -11,7 +11,8 @@ import MinimalLoginNoCaptchaDemo from './pages/MinimalLoginNoCaptchaDemo'
 import MinimalLoginWithCaptchaDemo from './pages/MinimalLoginWithCaptchaDemo'
 import GlassLoginNoCaptchaDemo from './pages/GlassLoginNoCaptchaDemo'
 import GlassLoginWithCaptchaDemo from './pages/GlassLoginWithCaptchaDemo'
-import NeumorphismLoginDemo from './pages/NeumorphismLoginDemo'
+import NeumorphismLoginNoCaptchaDemo from './pages/NeumorphismLoginNoCaptchaDemo'
+import NeumorphismLoginWithCaptchaDemo from './pages/NeumorphismLoginWithCaptchaDemo'
 import ComparisonPage from './pages/ComparisonPage'
 import DocumentationPage from './pages/DocumentationPage'
 
@@ -149,8 +150,8 @@ function App() {
               </motion.div>
             }
           />
-          <Route 
-            path="/neumorphism" 
+          <Route
+            path="/neumorphism"
             element={
               <motion.div
                 initial="initial"
@@ -159,9 +160,23 @@ function App() {
                 variants={pageVariants}
                 transition={pageTransition}
               >
-                <NeumorphismLoginDemo />
+                <NeumorphismLoginNoCaptchaDemo />
               </motion.div>
-            } 
+            }
+          />
+          <Route
+            path="/neumorphism/captcha"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <NeumorphismLoginWithCaptchaDemo />
+              </motion.div>
+            }
           />
           <Route 
             path="/comparison" 

@@ -14,7 +14,8 @@ const navItems = [
       { label: '极简风格（带验证码）', to: '/minimal/captcha', icon: Minimize2 },
       { label: '玻璃风格（无验证码）', to: '/glass', icon: Droplets },
       { label: '玻璃风格（带验证码）', to: '/glass/captcha', icon: Droplets },
-      { label: '新拟态风格（可切换验证码）', to: '/neumorphism', icon: Circle },
+      { label: '新拟态风格（无验证码）', to: '/neumorphism', icon: Circle },
+      { label: '新拟态风格（带验证码）', to: '/neumorphism/captcha', icon: Circle },
     ]
   },
   {

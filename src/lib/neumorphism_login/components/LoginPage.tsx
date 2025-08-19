@@ -206,16 +206,18 @@ export const NeumorphismLoginPage: React.FC<NeumorphismLoginPageProps> = React.m
             {/* 验证码输入框 */}
             {showCaptcha && (
               <div className="yggjs-neumorphism-login-field">
-                <CaptchaInput
-                  value={values.captcha || ''}
-                  onChange={(value) => setValue('captcha', value)}
-                  onValidate={handleCaptchaValidate}
-                  placeholder={captchaLabel}
-                  config={captchaConfig}
-                  aria-label={captchaLabel}
-                  inputClassName="yggjs-neumorphism-login-input"
-                  disabled={disabled || loading || isSubmitting}
-                />
+                <div className="yggjs-neumorphism-input-container">
+                  <CaptchaInput
+                    value={values.captcha || ''}
+                    onChange={(value) => setValue('captcha', value)}
+                    onValidate={handleCaptchaValidate}
+                    placeholder={captchaLabel}
+                    config={captchaConfig}
+                    aria-label={captchaLabel}
+                    inputClassName="yggjs-neumorphism-login-input"
+                    disabled={disabled || loading || isSubmitting}
+                  />
+                </div>
                 {touched.captcha && errors.captcha && (
                   <div className="yggjs-neumorphism-login-error" role="alert">
                     {errors.captcha}
