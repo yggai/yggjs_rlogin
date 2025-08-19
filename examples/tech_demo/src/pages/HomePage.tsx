@@ -6,32 +6,50 @@ import './HomePage.css'
 
 const navItems = [
   {
-    group: '基础组件演示（登录）',
+    group: '基础风格',
     items: [
-      { label: '基础风格（无验证码）', to: '/basic', icon: Layers },
-      { label: '基础风格（带验证码）', to: '/basic/captcha', icon: Layers },
-      { label: '极简风格（无验证码）', to: '/minimal', icon: Minimize2 },
-      { label: '极简风格（带验证码）', to: '/minimal/captcha', icon: Minimize2 },
-      { label: '玻璃风格（无验证码）', to: '/glass', icon: Droplets },
-      { label: '玻璃风格（带验证码）', to: '/glass/captcha', icon: Droplets },
-      { label: '新拟态风格（无验证码）', to: '/neumorphism', icon: Circle },
-      { label: '新拟态风格（带验证码）', to: '/neumorphism/captcha', icon: Circle },
+      { label: '不带验证码登录', to: '/basic', icon: Layers },
+      { label: '带验证码登录', to: '/basic/captcha', icon: Layers },
+      { label: '不带验证码注册', to: '/basic/register', icon: Layers },
+      { label: '带验证码注册', to: '/basic/register/captcha', icon: Layers },
     ]
   },
   {
-    group: '注册组件演示',
+    group: '极简风格',
     items: [
-      { label: '基础风格注册（无验证码）', to: '/basic/register', icon: Layers },
-      { label: '基础风格注册（带验证码）', to: '/basic/register/captcha', icon: Layers },
-      { label: '极简风格注册（无验证码）', to: '/minimal/register', icon: Minimize2 },
-      { label: '极简风格注册（带验证码）', to: '/minimal/register/captcha', icon: Minimize2 },
-      { label: '玻璃风格注册（无验证码）', to: '/glass/register', icon: Droplets },
-      { label: '玻璃风格注册（带验证码）', to: '/glass/register/captcha', icon: Droplets },
-      { label: '新拟态风格注册（无验证码）', to: '/neumorphism/register', icon: Circle },
-      { label: '新拟态风格注册（带验证码）', to: '/neumorphism/register/captcha', icon: Circle },
+      { label: '不带验证码登录', to: '/minimal', icon: Minimize2 },
+      { label: '带验证码登录', to: '/minimal/captcha', icon: Minimize2 },
+      { label: '不带验证码注册', to: '/minimal/register', icon: Minimize2 },
+      { label: '带验证码注册', to: '/minimal/register/captcha', icon: Minimize2 },
     ]
   },
-
+  {
+    group: '玻璃风格',
+    items: [
+      { label: '不带验证码登录', to: '/glass', icon: Droplets },
+      { label: '带验证码登录', to: '/glass/captcha', icon: Droplets },
+      { label: '不带验证码注册', to: '/glass/register', icon: Droplets },
+      { label: '带验证码注册', to: '/glass/register/captcha', icon: Droplets },
+    ]
+  },
+  {
+    group: '新拟态风格',
+    items: [
+      { label: '不带验证码登录', to: '/neumorphism', icon: Circle },
+      { label: '带验证码登录', to: '/neumorphism/captcha', icon: Circle },
+      { label: '不带验证码注册', to: '/neumorphism/register', icon: Circle },
+      { label: '带验证码注册', to: '/neumorphism/register/captcha', icon: Circle },
+    ]
+  },
+  {
+    group: '暗黑霓虹风格',
+    items: [
+      { label: '不带验证码登录', to: '/darkneon', icon: Sparkles },
+      { label: '带验证码登录', to: '/darkneon/captcha', icon: Sparkles },
+      { label: '不带验证码注册', to: '/darkneon/register', icon: Sparkles },
+      { label: '带验证码注册', to: '/darkneon/register/captcha', icon: Sparkles },
+    ]
+  },
   {
     group: '其他页面',
     items: [

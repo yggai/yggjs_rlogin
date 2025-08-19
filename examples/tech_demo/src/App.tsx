@@ -1,4 +1,3 @@
-import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLocation } from 'react-router-dom'
@@ -13,6 +12,8 @@ import GlassLoginNoCaptchaDemo from './pages/GlassLoginNoCaptchaDemo'
 import GlassLoginWithCaptchaDemo from './pages/GlassLoginWithCaptchaDemo'
 import NeumorphismLoginNoCaptchaDemo from './pages/NeumorphismLoginNoCaptchaDemo'
 import NeumorphismLoginWithCaptchaDemo from './pages/NeumorphismLoginWithCaptchaDemo'
+import DarkNeonLoginNoCaptchaDemo from './pages/DarkNeonLoginNoCaptchaDemo'
+import DarkNeonLoginWithCaptchaDemo from './pages/DarkNeonLoginWithCaptchaDemo'
 // 注册 Demos
 import BasicRegisterNoCaptchaDemo from './pages/BasicRegisterNoCaptchaDemo'
 import BasicRegisterWithCaptchaDemo from './pages/BasicRegisterWithCaptchaDemo'
@@ -22,6 +23,8 @@ import GlassRegisterNoCaptchaDemo from './pages/GlassRegisterNoCaptchaDemo'
 import GlassRegisterWithCaptchaDemo from './pages/GlassRegisterWithCaptchaDemo'
 import NeumorphismRegisterNoCaptchaDemo from './pages/NeumorphismRegisterNoCaptchaDemo'
 import NeumorphismRegisterWithCaptchaDemo from './pages/NeumorphismRegisterWithCaptchaDemo'
+import DarkNeonRegisterNoCaptchaDemo from './pages/DarkNeonRegisterNoCaptchaDemo'
+import DarkNeonRegisterWithCaptchaDemo from './pages/DarkNeonRegisterWithCaptchaDemo'
 import ComparisonPage from './pages/ComparisonPage'
 import DocumentationPage from './pages/DocumentationPage'
 
@@ -188,6 +191,36 @@ function App() {
             }
           />
 
+          {/* 暗黑霓虹登录页面路由 */}
+          <Route
+            path="/darkneon"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <DarkNeonLoginNoCaptchaDemo />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/darkneon/captcha"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <DarkNeonLoginWithCaptchaDemo />
+              </motion.div>
+            }
+          />
+
           {/* 注册页面路由 */}
           <Route
             path="/basic/register"
@@ -304,8 +337,38 @@ function App() {
               </motion.div>
             }
           />
-          <Route 
-            path="/comparison" 
+
+          {/* 暗黑霓虹注册页面路由 */}
+          <Route
+            path="/darkneon/register"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <DarkNeonRegisterNoCaptchaDemo />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/darkneon/register/captcha"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <DarkNeonRegisterWithCaptchaDemo />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/comparison"
             element={
               <motion.div
                 initial="initial"

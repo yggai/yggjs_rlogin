@@ -5,12 +5,6 @@ import {
   Menu, 
   X, 
   Home, 
-  Layers, 
-  Minimize2, 
-  Droplets, 
-  Circle,
-  BarChart3,
-  BookOpen,
   Github,
   Zap
 } from 'lucide-react'
@@ -41,10 +35,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   const navItems = [
     { path: '/', label: '首页', icon: Home },
-    { path: '/basic', label: '基础登录', icon: Layers },
-    { path: '/minimal', label: '极简登录', icon: Minimize2 },
-    { path: '/glass', label: '玻璃登录', icon: Droplets },
-    { path: '/neumorphism', label: '新拟态登录', icon: Circle },
   ]
 
   return (

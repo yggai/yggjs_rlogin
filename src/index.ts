@@ -13,6 +13,9 @@ export * from './lib/glass_login'
 // 新拟态风格登录注册
 export * from './lib/neumorphism_login'
 
+// 暗黑霓虹风格登录注册
+export * from './lib/dark_neon_login'
+
 // 向后兼容的导出（保留旧的API）
 // 注意：旧的组件已迁移到对应的风格目录中
 // 请使用新的导入方式：

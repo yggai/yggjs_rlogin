@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { NeumorphismLoginPage } from 'yggjs_rlogin'
-import { ArrowLeft, Settings, Eye, EyeOff } from 'lucide-react'
+import { ArrowLeft, Settings, EyeOff } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import './DemoPage.css'
 
 const NeumorphismLoginDemo: React.FC = () => {
   const [showCaptcha, setShowCaptcha] = useState(false)
   const [showRememberMe, setShowRememberMe] = useState(true)
-  const [showAgreement, setShowAgreement] = useState(false)
   const [isPreviewMode, setIsPreviewMode] = useState(true)
 
   const handleLogin = async (payload: any) => {

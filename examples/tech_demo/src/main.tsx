@@ -6,7 +6,7 @@ import './styles/global.css'
 
 // 移除加载屏幕
 const removeLoadingScreen = () => {
-  const loadingScreen = document.querySelector('.loading-screen')
+  const loadingScreen = document.querySelector('.loading-screen') as HTMLElement | null
   if (loadingScreen) {
     loadingScreen.style.opacity = '0'
     loadingScreen.style.transition = 'opacity 0.5s ease-out'
