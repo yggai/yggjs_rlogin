@@ -28,6 +28,9 @@ export * from './lib/split_brand_login'
 // 毛玻璃弹窗风格登录注册
 export * from './lib/frosted_modal_login'
 
+// 复古像素风格登录注册
+export * from './lib/retro_pixel_login'
+
 // 向后兼容的导出（保留旧的API）
 // 注意：旧的组件已迁移到对应的风格目录中
 // 请使用新的导入方式：

@@ -49,6 +49,11 @@ import FrostedLoginNoCaptchaDemo from './pages/frostedmodal/LoginNoCaptchaDemo'
 import FrostedLoginWithCaptchaDemo from './pages/frostedmodal/LoginWithCaptchaDemo'
 import FrostedRegisterNoCaptchaDemo from './pages/frostedmodal/RegisterNoCaptchaDemo'
 import FrostedRegisterWithCaptchaDemo from './pages/frostedmodal/RegisterWithCaptchaDemo'
+// Retro Pixel
+import RetroPixelLoginNoCaptchaDemo from './pages/retropixel/LoginNoCaptchaDemo'
+import RetroPixelLoginWithCaptchaDemo from './pages/retropixel/LoginWithCaptchaDemo'
+import RetroPixelRegisterNoCaptchaDemo from './pages/retropixel/RegisterNoCaptchaDemo'
+import RetroPixelRegisterWithCaptchaDemo from './pages/retropixel/RegisterWithCaptchaDemo'
 
 import ComparisonPage from './pages/ComparisonPage'
 import DocumentationPage from './pages/DocumentationPage'
@@ -423,6 +428,14 @@ function App() {
           {/* 渐变撞色注册页面路由 */}
           <Route path="/gradient/register" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><GradientClashRegisterNoCaptchaDemo /></motion.div>} />
           <Route path="/gradient/register/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><GradientClashRegisterWithCaptchaDemo /></motion.div>} />
+
+          {/* 复古像素登录页面路由 */}
+          <Route path="/retropixel" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><RetroPixelLoginNoCaptchaDemo /></motion.div>} />
+          <Route path="/retropixel/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><RetroPixelLoginWithCaptchaDemo /></motion.div>} />
+
+          {/* 复古像素注册页面路由 */}
+          <Route path="/retropixel/register" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><RetroPixelRegisterNoCaptchaDemo /></motion.div>} />
+          <Route path="/retropixel/register/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><RetroPixelRegisterWithCaptchaDemo /></motion.div>} />
 
           <Route
             path="/comparison"

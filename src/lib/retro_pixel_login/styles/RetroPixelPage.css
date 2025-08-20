@@ -1,0 +1,35 @@
+/* 复古像素主题：黑底绿字 + CRT 效果 + 像素字体 */
+.yggjs-retro-page { min-height:100vh; min-width:100vw; display:flex; align-items:center; justify-content:center; background:#000; color:#00ff99; font-family: var(--retro-font, 'Press Start 2P', system-ui, monospace); position:relative; overflow:hidden; }
+.yggjs-retro-scanlines { position:absolute; inset:0; background: repeating-linear-gradient(180deg, rgba(255,255,255,.02) 0, rgba(255,255,255,.02) 1px, transparent 2px, transparent 4px); mix-blend-mode: overlay; pointer-events:none; }
+.yggjs-retro-vignette { position:absolute; inset:0; box-shadow: inset 0 0 120px rgba(0,0,0,.6); pointer-events:none; }
+
+.yggjs-retro-card { width: 420px; padding: 24px; border-radius: 8px; background: #000; border: 2px solid #00ff99; box-shadow: 0 0 12px rgba(0,255,153,.25), inset 0 0 10px rgba(0,255,153,.15); position:relative; z-index:1; }
+.yggjs-retro-title { font-size: 16px; color:#00ff99; text-shadow: 0 0 8px rgba(0,255,153,.35); text-align:center; margin: 0 0 16px; }
+
+.yggjs-retro-field { margin-bottom:12px; }
+.yggjs-retro-input { width:100%; height:44px; padding:0 12px; border-radius: 4px; border:2px solid #00ff99; background:#000; color:#00ff99; outline:none; box-shadow: inset 0 0 6px rgba(0,255,153,.2) }
+.yggjs-retro-input::placeholder{ color:#00ff99 }
+.yggjs-retro-input:focus{ filter: brightness(1.1); }
+
+.yggjs-retro-button { width:100%; height:44px; border-radius:4px; border:2px solid #00ff99; background:#001a12; color:#00ff99; font-weight:700; cursor:pointer; box-shadow: 0 0 10px rgba(0,255,153,.25) }
+.yggjs-retro-button:hover{ filter:brightness(1.1) }
+.yggjs-retro-button:disabled{ opacity:.6; cursor:not-allowed }
+
+.yggjs-retro-error{ color:#ff8a8a; font-size:14px; margin-top:8px; }
+.yggjs-retro-cursor{ display:inline-block; width:8px; height:16px; background:#00ff99; margin-left:4px; animation: retro-blink .9s steps(1) infinite; vertical-align: text-bottom; }
+@keyframes retro-blink { 50%{ opacity:0 } }
+
+/* 调色板变体 */
+.yggjs-retro-page[data-palette="amber"]{ color:#ffcc33 }
+.yggjs-retro-page[data-palette="amber"] .yggjs-retro-card{ border-color:#ffcc33; box-shadow:0 0 12px rgba(255,204,51,.25), inset 0 0 10px rgba(255,204,51,.15) }
+.yggjs-retro-page[data-palette="amber"] .yggjs-retro-input{ border-color:#ffcc33; color:#ffcc33 }
+.yggjs-retro-page[data-palette="amber"] .yggjs-retro-button{ border-color:#ffcc33; color:#ffcc33; background:#1a1400 }
+
+.yggjs-retro-page[data-palette="phosphor"]{ color:#66ccff }
+.yggjs-retro-page[data-palette="phosphor"] .yggjs-retro-card{ border-color:#66ccff; box-shadow:0 0 12px rgba(102,204,255,.25), inset 0 0 10px rgba(102,204,255,.15) }
+.yggjs-retro-page[data-palette="phosphor"] .yggjs-retro-input{ border-color:#66ccff; color:#66ccff }
+.yggjs-retro-page[data-palette="phosphor"] .yggjs-retro-button{ border-color:#66ccff; color:#66ccff; background:#00131a }
+
+/* 验证码图片 */
+.yggjs-retro-page .yggjs-captcha-image{ background:#000; border:2px solid currentColor; border-radius:4px; height:44px; width:120px; }
+

@@ -12,6 +12,7 @@ import { GradientClashRegisterPage } from './lib/gradient_clash_login'
 import { IllustrationRegisterPage } from './lib/illustration_login'
 import { SplitBrandRegisterPage } from './lib/split_brand_login'
 import { FrostedModalRegisterPage } from './lib/frosted_modal_login'
+import { RetroPixelRegisterPage } from './lib/retro_pixel_login'
 
 async function fillAndSubmit(fields: {
   username?: string
@@ -95,4 +96,5 @@ runSuite('GradientClash', GradientClashRegisterPage)
 runSuite('Illustration', IllustrationRegisterPage)
 runSuite('SplitBrand', SplitBrandRegisterPage)
 runSuite('FrostedModal', FrostedModalRegisterPage)
+runSuite('RetroPixel', RetroPixelRegisterPage)
 
