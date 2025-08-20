@@ -1,0 +1,28 @@
+/* 三维玻璃：云端背景 + 透视悬浮玻璃卡片 + 微景深输入框 */
+.yggjs-3dglass-page{ min-height:100vh; min-width:100vw; position:relative; overflow:hidden; background: radial-gradient(1000px 600px at 10% 10%, rgba(99,102,241,.18), transparent 60%), radial-gradient(900px 600px at 90% 70%, rgba(16,185,129,.18), transparent 60%), linear-gradient(180deg, #0b0f14, #0a0e13 60%, #0b0f14); color:#e5e7eb }
+.yggjs-3dglass-clouds{ position:absolute; inset: -20% -10% -20% -10%; pointer-events:none; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600"><defs><radialGradient id="g" cx="50%" cy="50%"><stop offset="0%" stop-color="white" stop-opacity=".08"/><stop offset="100%" stop-color="white" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="200" fill="url(%23g)"/><circle cx="600" cy="350" r="250" fill="url(%23g)"/><circle cx="1000" cy="180" r="220" fill="url(%23g)"/></svg>') center/cover no-repeat; filter: blur(18px); opacity:.9 }
+
+.yggjs-3dglass-center{ min-height:100vh; display:flex; align-items:center; justify-content:center; perspective: var(--depth, 800px); padding: 40px 20px }
+.yggjs-3dglass-card{ width: 420px; height: 600px; border-radius: 20px; padding: 28px 24px; transform-style: preserve-3d; background: linear-gradient(160deg, rgba(255,255,255,.12), rgba(255,255,255,.05)); border:1px solid rgba(255,255,255,.25); box-shadow: 0 50px 120px rgba(0,0,0,.45), inset 0 0 40px rgba(255,255,255,.06); backdrop-filter: blur(16px) saturate(120%); position:relative }
+.yggjs-3dglass-reflection{ position:absolute; inset:-1px -1px; border-radius: inherit; background: linear-gradient(120deg, rgba(255,255,255,.45), rgba(255,255,255,0) 55%); mix-blend-mode: screen; opacity: var(--envLight, .35); pointer-events:none }
+
+.yggjs-3dglass-title{ font-size:22px; font-weight:700; letter-spacing:.2px; text-align:center; color:#f1f5f9; margin: 0 0 12px; text-shadow: 0 6px 20px rgba(0,0,0,.35) }
+.yggjs-3dglass-subtitle{ margin-top:6px; text-align:center; color:#cbd5e1 }
+
+.yggjs-3dglass-field{ margin-bottom:14px; transform: translateZ(32px) }
+.yggjs-3dglass-input{ width:100%; height:48px; padding:0 14px; border-radius:12px; border:1px solid rgba(255,255,255,.25); background: rgba(20,24,32,.65); color:#e5e7eb; outline:none; box-shadow: inset 0 8px 14px rgba(0,0,0,.35), 0 12px 28px rgba(0,0,0,.25) }
+.yggjs-3dglass-input::placeholder{ color:#9fb1c7 }
+.yggjs-3dglass-input:focus{ border-color: rgba(255,255,255,.45); box-shadow: inset 0 8px 14px rgba(0,0,0,.35), 0 16px 36px rgba(0,0,0,.35) }
+
+.yggjs-3dglass-button{ width:100%; height:48px; border-radius:12px; border:1px solid rgba(255,255,255,.28); background: linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.08)); color:#0b0f14; font-weight:800; letter-spacing:.4px; cursor:pointer; box-shadow: 0 18px 48px rgba(0,0,0,.45); backdrop-filter: blur(6px) saturate(120%) }
+.yggjs-3dglass-button:hover{ filter: brightness(1.05) }
+.yggjs-3dglass-button:disabled{ opacity:.6; cursor:not-allowed }
+
+.yggjs-3dglass-error{ color:#fca5a5; font-size:14px; margin-top:8px }
+
+/* Captcha 继承输入风格 */
+.yggjs-3dglass-page .yggjs-captcha-input-field{ height:48px; border-radius:12px; border:1px solid rgba(255,255,255,.25); background: rgba(20,24,32,.65); color:#e5e7eb; padding:0 14px }
+.yggjs-3dglass-page .yggjs-captcha-image{ height:48px; width:120px; border-radius:12px; border:1px solid rgba(255,255,255,.25); background: rgba(20,24,32,.65) }
+
+@media (max-width: 520px){ .yggjs-3dglass-card{ width: 92vw; height:auto } }
+

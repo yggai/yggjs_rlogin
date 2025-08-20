@@ -54,6 +54,11 @@ import RetroPixelLoginNoCaptchaDemo from './pages/retropixel/LoginNoCaptchaDemo'
 import RetroPixelLoginWithCaptchaDemo from './pages/retropixel/LoginWithCaptchaDemo'
 import RetroPixelRegisterNoCaptchaDemo from './pages/retropixel/RegisterNoCaptchaDemo'
 import RetroPixelRegisterWithCaptchaDemo from './pages/retropixel/RegisterWithCaptchaDemo'
+// ThreeD Glass
+import ThreeDGlassLoginNoCaptchaDemo from './pages/threedglass/LoginNoCaptchaDemo'
+import ThreeDGlassLoginWithCaptchaDemo from './pages/threedglass/LoginWithCaptchaDemo'
+import ThreeDGlassRegisterNoCaptchaDemo from './pages/threedglass/RegisterNoCaptchaDemo'
+import ThreeDGlassRegisterWithCaptchaDemo from './pages/threedglass/RegisterWithCaptchaDemo'
 
 import ComparisonPage from './pages/ComparisonPage'
 import DocumentationPage from './pages/DocumentationPage'
@@ -436,6 +441,14 @@ function App() {
           {/* 复古像素注册页面路由 */}
           <Route path="/retropixel/register" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><RetroPixelRegisterNoCaptchaDemo /></motion.div>} />
           <Route path="/retropixel/register/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><RetroPixelRegisterWithCaptchaDemo /></motion.div>} />
+
+          {/* 三维玻璃登录页面路由 */}
+          <Route path="/threedglass" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><ThreeDGlassLoginNoCaptchaDemo /></motion.div>} />
+          <Route path="/threedglass/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><ThreeDGlassLoginWithCaptchaDemo /></motion.div>} />
+
+          {/* 三维玻璃注册页面路由 */}
+          <Route path="/threedglass/register" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><ThreeDGlassRegisterNoCaptchaDemo /></motion.div>} />
+          <Route path="/threedglass/register/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><ThreeDGlassRegisterWithCaptchaDemo /></motion.div>} />
 
           <Route
             path="/comparison"

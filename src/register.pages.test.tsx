@@ -13,6 +13,7 @@ import { IllustrationRegisterPage } from './lib/illustration_login'
 import { SplitBrandRegisterPage } from './lib/split_brand_login'
 import { FrostedModalRegisterPage } from './lib/frosted_modal_login'
 import { RetroPixelRegisterPage } from './lib/retro_pixel_login'
+import { ThreeDGlassRegisterPage } from './lib/threed_glass_login'
 
 async function fillAndSubmit(fields: {
   username?: string
@@ -97,4 +98,5 @@ runSuite('Illustration', IllustrationRegisterPage)
 runSuite('SplitBrand', SplitBrandRegisterPage)
 runSuite('FrostedModal', FrostedModalRegisterPage)
 runSuite('RetroPixel', RetroPixelRegisterPage)
+runSuite('ThreeDGlass', ThreeDGlassRegisterPage)
 

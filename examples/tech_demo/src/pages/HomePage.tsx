@@ -96,6 +96,15 @@ const navItems = [
     ]
   },
   {
+    group: '三维玻璃风格',
+    items: [
+      { label: '不带验证码登录', to: '/threedglass', icon: Sparkles },
+      { label: '带验证码登录', to: '/threedglass/captcha', icon: Sparkles },
+      { label: '不带验证码注册', to: '/threedglass/register', icon: Sparkles },
+      { label: '带验证码注册', to: '/threedglass/register/captcha', icon: Sparkles },
+    ]
+  },
+  {
     group: '其他页面',
     items: [
       { label: '对比展示', to: '/comparison', icon: Shield },
