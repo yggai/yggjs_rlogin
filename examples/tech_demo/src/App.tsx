@@ -44,6 +44,11 @@ import SplitBrandLoginNoCaptchaDemo from './pages/splitbrand/LoginNoCaptchaDemo'
 import SplitBrandLoginWithCaptchaDemo from './pages/splitbrand/LoginWithCaptchaDemo'
 import SplitBrandRegisterNoCaptchaDemo from './pages/splitbrand/RegisterNoCaptchaDemo'
 import SplitBrandRegisterWithCaptchaDemo from './pages/splitbrand/RegisterWithCaptchaDemo'
+// Frosted Modal
+import FrostedLoginNoCaptchaDemo from './pages/frostedmodal/LoginNoCaptchaDemo'
+import FrostedLoginWithCaptchaDemo from './pages/frostedmodal/LoginWithCaptchaDemo'
+import FrostedRegisterNoCaptchaDemo from './pages/frostedmodal/RegisterNoCaptchaDemo'
+import FrostedRegisterWithCaptchaDemo from './pages/frostedmodal/RegisterWithCaptchaDemo'
 
 import ComparisonPage from './pages/ComparisonPage'
 import DocumentationPage from './pages/DocumentationPage'
@@ -249,6 +254,10 @@ function App() {
           <Route path="/splitbrand" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><SplitBrandLoginNoCaptchaDemo /></motion.div>} />
           <Route path="/splitbrand/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><SplitBrandLoginWithCaptchaDemo /></motion.div>} />
 
+          {/* 毛玻璃弹窗登录页面路由 */}
+          <Route path="/frosted" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><FrostedLoginNoCaptchaDemo /></motion.div>} />
+          <Route path="/frosted/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><FrostedLoginWithCaptchaDemo /></motion.div>} />
+
           {/* 注册页面路由 */}
           <Route
             path="/basic/register"
@@ -403,6 +412,10 @@ function App() {
           {/* 分屏品牌注册页面路由 */}
           <Route path="/splitbrand/register" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><SplitBrandRegisterNoCaptchaDemo /></motion.div>} />
           <Route path="/splitbrand/register/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><SplitBrandRegisterWithCaptchaDemo /></motion.div>} />
+
+          {/* 毛玻璃弹窗注册页面路由 */}
+          <Route path="/frosted/register" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><FrostedRegisterNoCaptchaDemo /></motion.div>} />
+          <Route path="/frosted/register/captcha" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><FrostedRegisterWithCaptchaDemo /></motion.div>} />
 
           {/* 渐变撞色登录页面路由 */}
           <Route path="/gradient" element={<motion.div initial="initial" animate="in" exit="out" variants={pageVariants} transition={pageTransition}><GradientClashLoginNoCaptchaDemo /></motion.div>} />

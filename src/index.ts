@@ -25,6 +25,9 @@ export * from './lib/illustration_login'
 // 分屏品牌风格登录注册
 export * from './lib/split_brand_login'
 
+// 毛玻璃弹窗风格登录注册
+export * from './lib/frosted_modal_login'
+
 // 向后兼容的导出（保留旧的API）
 // 注意：旧的组件已迁移到对应的风格目录中
 // 请使用新的导入方式：

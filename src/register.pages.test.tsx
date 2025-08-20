@@ -11,6 +11,7 @@ import { DarkNeonRegisterPage } from './lib/dark_neon_login'
 import { GradientClashRegisterPage } from './lib/gradient_clash_login'
 import { IllustrationRegisterPage } from './lib/illustration_login'
 import { SplitBrandRegisterPage } from './lib/split_brand_login'
+import { FrostedModalRegisterPage } from './lib/frosted_modal_login'
 
 async function fillAndSubmit(fields: {
   username?: string
@@ -93,4 +94,5 @@ runSuite('DarkNeon', DarkNeonRegisterPage)
 runSuite('GradientClash', GradientClashRegisterPage)
 runSuite('Illustration', IllustrationRegisterPage)
 runSuite('SplitBrand', SplitBrandRegisterPage)
+runSuite('FrostedModal', FrostedModalRegisterPage)
 

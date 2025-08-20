@@ -78,6 +78,15 @@ const navItems = [
     ]
   },
   {
+    group: '毛玻璃弹窗风格',
+    items: [
+      { label: '不带验证码登录', to: '/frosted', icon: Sparkles },
+      { label: '带验证码登录', to: '/frosted/captcha', icon: Sparkles },
+      { label: '不带验证码注册', to: '/frosted/register', icon: Sparkles },
+      { label: '带验证码注册', to: '/frosted/register/captcha', icon: Sparkles },
+    ]
+  },
+  {
     group: '其他页面',
     items: [
       { label: '对比展示', to: '/comparison', icon: Shield },
